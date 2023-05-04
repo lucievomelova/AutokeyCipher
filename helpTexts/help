@@ -1,0 +1,31 @@
+Usage: autokey [OPTION]... [MODE]... [KEY]... [INPUT_FILE]... [OUTPUT_FILE]...
+Encrypts or decrypts given INPUT FILE using KEY.
+
+Example usage: autokey -e --mode=ecb --key=123456789 --input=inputfile.txt --output=outputfile.txt
+
+[OPTION]: mandatory flag.
+    -e, --encrypt       encrypt file
+    -d, --decrypt       decrypt file
+
+[MODE]: optional option for specifying cipher mode. Usage:
+    -m, --mode          accepts exactly one parameter with one of the following values:
+        ecb                 electronic code book (block cipher mode)
+        cbc                 cipher block chaining (block cipher mode)
+        ofb                 output feedback (block cipher mode)
+        ctr                 counter (block cipher mode)
+        stream              stream cipher mode (default value)
+
+[KEY]: mandatory option for specifying which key will be used for encryption or decryption. Usage
+    -k, --key           accepts exactly one parameter - the cipher key
+
+[INPUT_FILE]: mandatory option for specifying input file. Usage:
+    -i, --input         accepts exactly one parameter - the input file
+
+[OUTPUT_FILE]: optional option for specifying output file. If not given, generated output will be stored in
+[INPUT_FILE]_encrypted.*extension* when encrypting and in [INPUT FILE]_decrypted.*extension* when decrypting. Usage:
+    -o, --output        accepts exactly one parameter - the input file
+
+For a better understanding of each block cipher mode, type -h/--help -m/--mode=mode_name. This will
+print a diagram which briefly describes how given mode works.
+
+You can also enter interactive mode by calling autokey without any parameters.

@@ -1,0 +1,3 @@
+Stream cipher mode
+A stream cipher is a symmetric key cipher where plaintext bits are combined
+with a cipher stream (keystream).

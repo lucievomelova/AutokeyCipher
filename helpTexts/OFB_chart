@@ -1,0 +1,17 @@
+OFB - Output Feedback
+The output feedback (OFB) mode makes a block cipher into a synchronous stream
+cipher. It generates keystream blocks, which are then XORed with the plaintext
+blocks to get the ciphertext. To make each message unique, an initialization
+vector must be used in the first block.
+
+                        IV               --------------------------------                  --------------------------------
+                        |                |                              |                  |                              |
+                        v                |                              v                  |
+    KEY ->   block_cipher_encryption     |          KEY ->   block_cipher_encryption       |
+                        |                |                              |                  |
+                        |-----------------                              |-------------------
+                        |                                               |
+        PLAINTEXT ->   XOR                              PLAINTEXT ->   XOR
+                        |                                               |
+                        v                                               v
+                    CIPHERTEXT                                      CIPHERTEXT

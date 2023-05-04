@@ -1,0 +1,16 @@
+CTR - Counter
+Counter mode turns a block cipher into a stream cipher. It generates the next
+keystream block by encrypting successive values of a "counter". The counter can
+be any function which produces a sequence which is guaranteed not to repeat
+for a long time. To make each message unique, a nonce with the counter value
+must be used in each block.
+
+                  Nonce + Counter                                 Nonce + Counter
+                        |                                               |
+                        v                                               v
+    KEY ->   block_cipher_encryption               KEY ->   block_cipher_encryption
+                        |                                               |
+        PLAINTEXT ->   XOR                              PLAINTEXT ->   XOR
+                        |                                               |
+                        v                                               v
+                    CIPHERTEXT                                      CIPHERTEXT

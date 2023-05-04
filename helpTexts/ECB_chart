@@ -1,0 +1,10 @@
+ECB - Electronic Code Book
+The message is divided into blocks, and each block is encrypted separately. 
+
+                    PLAINTEXT                                       PLAINTEXT
+                        |                                               |
+                        v                                               v
+    KEY ->   block_cipher_encryption                KEY ->   block_cipher_encryption
+                        |                                               |
+                        v                                               v
+                    CIPHERTEXT                                      CIPHERTEXT
